@@ -1,4 +1,9 @@
+export const navItems = ["Home","About Me","Star Wars","Contact "];
+
+
 export const openingCrawl = `It is a period of civil war.
+
+
             Rebel spaceships, striking
             from a hidden base, have won
             their first victory against
