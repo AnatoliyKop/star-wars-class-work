@@ -7,12 +7,13 @@ import {navItems} from "./utils/constants.js";
 
 function App() {
     const [page, setPage] = useState(navItems[0]);
+    const [personInfo, setPersonInfo] = useState({});
 
 
     return (
         <div className={'container-fluid'}>
             <Header changePage={setPage}/>
-            <Main page={page}/>
+            <Main personInfo={personInfo} setPersonInfo={setPersonInfo} page={page}/>
             <Footer/>
         </div>
     )

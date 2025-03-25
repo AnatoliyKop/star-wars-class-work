@@ -4,11 +4,11 @@ import AboutMe from "./AboutMe.jsx";
 import StarWars from "./StarWars.jsx";
 import {navItems} from "../utils/constants.js";
 
-const Main = ({page}) => {
+const Main = ({page, personInfo,setPersonInfo}) => {
 
     switch (page) {
         case navItems[1]:
-            return <AboutMe/>;
+            return <AboutMe personInfo={personInfo} setPersonInfo={setPersonInfo} page={page}/>;
         case navItems[2]:
             return <StarWars/>;
         case navItems[3]:

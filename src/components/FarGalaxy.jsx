@@ -1,11 +1,28 @@
-import {openingCrawl} from "../utils/constants.js";
+import {useEffect, useState} from "react";
+import {baseURL} from "../utils/constants.js";
 
 const FarGalaxy = () => {
-    return (
-        <p className="farGalaxy">
-                {openingCrawl}
-        </p>
-    );
-};
+    const [openingCrawl, setOpeningCrawl] = useState("Loading...");
 
-export default FarGalaxy;
+    useEffect(() => {
+        const episode = Math.floor(Math.random() * 6 + 1);
+        fetch(`${baseURL}/v1/films/${episode}`)
+            .then(res => {
+                if (!res.ok) {
+                    throw new Error(`Failed to fetch film`);
+                }
+                return res.json();
+            })
+            .then(data => setOpeningCrawl(data.opening_crawl))
+            .catch(e => setOpeningCrawl(e.message))
+    }, [])
+
+        return (
+            <p className=" farGalaxy " >
+                {openingCrawl}
+            </p>
+        );
+    };
+
+
+    export default FarGalaxy;

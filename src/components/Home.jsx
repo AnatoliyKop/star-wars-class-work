@@ -5,11 +5,11 @@ import FarGalaxy from "./FarGalaxy.jsx";
 
 const Home = () => {
     return (
-        <div>
+        <main className="clearfix">
             <Hero/>
             <DreamTeam/>
             <FarGalaxy/>
-        </div>
+        </main>
     );
 };
 

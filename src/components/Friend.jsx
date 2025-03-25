@@ -10,7 +10,6 @@ const Friend = ({picture, pos}) => {
     }
     return (
         <img className={styles} src={picture} alt="Friend"/>
-
     );
 };
 
