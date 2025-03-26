@@ -13,8 +13,6 @@ const AboutMe = ({personInfo, setPersonInfo}) => {
         <div className= "m-5 p-5">
             <Hero />
          <PersonsInfo  personInfo={personInfo} setPersonInfo={setPersonInfo} />
-
-
         </div>
     );
 };
