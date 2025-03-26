@@ -4,6 +4,7 @@ import Main from "./components/Main.jsx";
 import Footer from "./components/Footer.jsx";
 import {useState} from "react";
 import {navItems} from "./utils/constants.js";
+import {StarWarsContext} from "./utils/context.js";
 
 function App() {
     const [page, setPage] = useState(navItems[0]);
@@ -12,8 +13,12 @@ function App() {
 
     return (
         <div className={'container-fluid'}>
-            <Header changePage={setPage}/>
-            <Main personInfo={personInfo} setPersonInfo={setPersonInfo} page={page}/>
+            <StarWarsContext value={{
+                page,setPage,personInfo,
+            }}>
+                <Header changePage={setPage}/>
+                <Main personInfo={personInfo} setPersonInfo={setPersonInfo} page={page}/>
+            </StarWarsContext>
             <Footer/>
         </div>
     )
